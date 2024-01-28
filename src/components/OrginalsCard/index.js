@@ -22,7 +22,7 @@ class TrendingCard extends Component {
 
   fetchTrendingData = async () => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
-    const apiUrl = 'https://apis.ccbp.in/movies-app/trending-movies'
+    const apiUrl = 'https://apis.ccbp.in/movies-app/originals'
     const jwtToken = Cookies.get('jwt_token')
     const options = {
       headers: {

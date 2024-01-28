@@ -1,6 +1,9 @@
 import Cookies from 'js-cookie'
 import {Component} from 'react'
 import TrendingCard from '../TrendingCard'
+import OrginalsCard from '../OrginalsCard'
+import FooterCard from '../FooterCard'
+
 import './index.css'
 
 class Home extends Component {
@@ -11,7 +14,6 @@ class Home extends Component {
   }
 
   getUpperCard = async () => {
-    console.log(1)
     const apiUrl = 'https://apis.ccbp.in/movies-app/trending-movies'
     const jwtToken = Cookies.get('jwt_token')
     const options = {
@@ -43,14 +45,12 @@ class Home extends Component {
     return (
       <>
         <div
-          className="devices-container"
+          className="image-card"
           alt={title}
           style={{
             background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(24, 24, 24, 0.546875) 38.26%, #181818 92.82%, #181818 98.68%, #181818 108.61%),url(${backdropPath})`,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-
-            minHeight: '605px',
             display: 'flex',
             flexDirection: 'column',
           }}
@@ -77,9 +77,16 @@ class Home extends Component {
     return (
       <div className="bg-home-container">
         {this.renderSuccessView()}
-        <div>
-          <h1 className="trending-heading">Trending Now</h1>
-          <TrendingCard />
+        <div className="home-items">
+          <div className="movies-card-container">
+            <h1 className="trending-heading">Trending Now</h1>
+            <TrendingCard />
+            <h1 className="trending-heading">Originals</h1>
+            <OrginalsCard />
+          </div>
+          <div>
+            <FooterCard />
+          </div>
         </div>
       </div>
     )
