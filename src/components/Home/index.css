@@ -1,0 +1,58 @@
+.home-poster-title {
+  color: var(--General-White, #fff);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'HK Grotesk';
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 62px; /* 96.875% */
+}
+
+.home-poster-overview {
+  color: #fff;
+  font-family: 'HK Grotesk';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 443px;
+}
+
+.home-poster-play-btn {
+  display: flex;
+  padding: 8px 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  background: #fff;
+  color: var(--General-Dark-blue, #171f46);
+  font-family: 'HK Grotesk';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 171.429% */
+  cursor: pointer;
+}
+
+.home-header-content {
+  margin-left: 164px;
+}
+
+.bg-home-container {
+  background: #181818;
+  display: flex;
+  flex-direction: column;
+  min-height: 120vh;
+}
+
+.trending-heading {
+  color: var(--General-White, #fff);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'HK Grotesk';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
