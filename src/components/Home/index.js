@@ -1,6 +1,7 @@
 import Cookies from 'js-cookie'
 import {Component} from 'react'
 import TrendingCard from '../TrendingCard'
+import Header from '../Header'
 import OrginalsCard from '../OrginalsCard'
 import FooterCard from '../FooterCard'
 
@@ -55,6 +56,7 @@ class Home extends Component {
             flexDirection: 'column',
           }}
         >
+          <Header />
           <div className="home-header-content">
             <h1 className="home-poster-title" key={title}>
               {title}
