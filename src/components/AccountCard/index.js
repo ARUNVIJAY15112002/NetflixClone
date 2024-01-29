@@ -11,8 +11,8 @@ const AccountCard = () => {
   const finalPassword = '*'.repeat(password.length)
   return (
     <>
+      <Header />
       <div className="account-bg-container">
-        <Header />
         <div className="account-card">
           <h1 className="account-head">Account</h1>
           <hr className="hr-line-account" />
@@ -34,7 +34,9 @@ const AccountCard = () => {
           <hr className="hr-line-account" />
           <button className="logout-button">Logout</button>
         </div>
-        <FooterCard />
+        <div className="account-footer-container">
+          <FooterCard />
+        </div>
       </div>
     </>
   )

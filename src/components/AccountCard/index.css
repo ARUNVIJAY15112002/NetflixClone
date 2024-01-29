@@ -2,6 +2,17 @@
   min-height: 120vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+}
+.account-footer-container {
+  background-color: #131313;
+  width: 100vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .account-person-details {
   display: flex;
@@ -16,7 +27,6 @@
   display: flex;
   flex-direction: row;
 }
-
 .plan-information {
   display: flex;
   flex-direction: row;

@@ -2,7 +2,8 @@ import {Component} from 'react'
 
 import {HiOutlineSearch} from 'react-icons/hi'
 import {MdMenuOpen} from 'react-icons/md'
-import {ImCross} from 'react-icons/im'
+import {IoMdCloseCircle} from 'react-icons/io'
+
 import './index.css'
 
 class Header extends Component {
@@ -85,7 +86,7 @@ class Header extends Component {
               <li className="list-item-mobile-view">Account</li>
             </ul>
             <button className="close-button" onClick={this.closeMenu}>
-              <ImCross size={15} />
+              <IoMdCloseCircle size={25} />
             </button>
           </div>
         )}

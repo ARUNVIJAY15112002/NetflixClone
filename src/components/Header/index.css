@@ -47,6 +47,11 @@
   flex-shrink: 0;
   color: #fff;
 }
+.nav-main-card {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
 .nav-card-1 {
   display: flex;
   flex-direction: row;
@@ -125,13 +130,15 @@
   background-color: transparent;
   border-width: 0px;
   color: #fff;
-  margin-top: 2px;
   display: none;
 }
 
 @media screen and (max-width: 576px) {
+  .search {
+    width: 100px;
+  }
   .nav-card-2 {
-    margin-right: 15px;
+    margin-left: -50px;
   }
   .nav-card-1 {
     margin-left: 15px;
@@ -173,6 +180,7 @@
   background-color: transparent;
   border-width: 0px;
   color: #fff;
+  margin-right: 40px;
 }
 @media screen and (max-width: 576px) {
   .menu-mobile-container {

@@ -46,12 +46,13 @@ class Home extends Component {
     return (
       <>
         <div
-          className="image-card"
           alt={title}
           style={{
             background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(24, 24, 24, 0.546875) 38.26%, #181818 92.82%, #181818 98.68%, #181818 108.61%),url(${backdropPath})`,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center center',
+            minHeight: '605px',
             display: 'flex',
             flexDirection: 'column',
           }}
