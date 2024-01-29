@@ -1,14 +1,21 @@
+import Cookies from 'js-cookie'
 import Header from '../Header'
-
 import FooterCard from '../FooterCard'
 
 import './index.css'
 
-const AccountCard = () => {
+const AccountCard = props => {
   const username = localStorage.getItem('username')
   const password = localStorage.getItem('password')
   const pass = password.length
   const finalPassword = '*'.repeat(password.length)
+
+  const logoutAction = () => {
+    Cookies.remove('jwt_token')
+    const {history} = props
+    history.replace('/login')
+  }
+
   return (
     <>
       <Header />
@@ -32,7 +39,9 @@ const AccountCard = () => {
             </div>
           </div>
           <hr className="hr-line-account" />
-          <button className="logout-button">Logout</button>
+          <button className="logout-button" onClick={logoutAction}>
+            Logout
+          </button>
         </div>
         <div className="account-footer-container">
           <FooterCard />

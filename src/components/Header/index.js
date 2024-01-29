@@ -1,5 +1,5 @@
 import {Component} from 'react'
-
+import {Link} from 'react-router-dom'
 import {HiOutlineSearch} from 'react-icons/hi'
 import {MdMenuOpen} from 'react-icons/md'
 import {IoMdCloseCircle} from 'react-icons/io'
@@ -43,8 +43,12 @@ class Header extends Component {
               alt="login website logo"
             />
             <ul className="list-items-nav">
-              <li className="header-items">Home</li>
-              <li className="header-items">Popular</li>
+              <Link to="/">
+                <li className="header-items">Home</li>
+              </Link>
+              <Link to="/popular">
+                <li className="header-items">Popular</li>
+              </Link>
             </ul>
           </div>
           <div className="nav-card-2">
@@ -59,20 +63,23 @@ class Header extends Component {
               )}
 
               <button type="button" className={iconStyle} testid="searchButton">
-                <HiOutlineSearch
-                  size={18}
-                  color="white"
-                  testid="searchButton"
-                  onClick={this.onClickSearchIcon}
-                />
+                <Link to="/search">
+                  <HiOutlineSearch
+                    size={18}
+                    color="white"
+                    testid="searchButton"
+                    onClick={this.onClickSearchIcon}
+                  />
+                </Link>
               </button>
             </div>
-
-            <img
-              src="https://res.cloudinary.com/dyx9u0bif/image/upload/v1657426927/account-avatar_irmhck.png"
-              className="profile-img"
-              alt="profile"
-            />
+            <Link to="/account">
+              <img
+                src="https://res.cloudinary.com/dyx9u0bif/image/upload/v1657426927/account-avatar_irmhck.png"
+                className="profile-img"
+                alt="profile"
+              />
+            </Link>
             <button className="menu-button" onClick={this.displayMenu}>
               <MdMenuOpen size={25} />
             </button>
@@ -81,9 +88,18 @@ class Header extends Component {
         {showMenu && (
           <div className="menu-mobile-container">
             <ul className="nav-mobile-views-list">
-              <li className="list-item-mobile-view">Home</li>
-              <li className="list-item-mobile-view">Popular</li>
-              <li className="list-item-mobile-view">Account</li>
+              <Link to="/">
+                {' '}
+                <li className="list-item-mobile-view">Home</li>
+              </Link>
+              <Link to="/popular">
+                {' '}
+                <li className="list-item-mobile-view">Popular</li>
+              </Link>
+              <Link to="/account">
+                {' '}
+                <li className="list-item-mobile-view">Account</li>
+              </Link>
             </ul>
             <button className="close-button" onClick={this.closeMenu}>
               <IoMdCloseCircle size={25} />

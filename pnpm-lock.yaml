@@ -27,6 +27,7 @@ specifiers:
   react-slick: 0.28.1
   react-slick-slider: 0.15.10
   slick-carousel: 1.8.1
+  workbox-routing: 7.0.0
 
 dependencies:
   '@testing-library/jest-dom': 5.11.9
@@ -47,6 +48,7 @@ dependencies:
   react-slick: 0.28.1_react-dom@17.0.1+react@17.0.1
   react-slick-slider: 0.15.10_react-dom@17.0.1+react@17.0.1
   slick-carousel: 1.8.1
+  workbox-routing: 7.0.0
 
 devDependencies:
   eslint-config-airbnb: 18.2.1
@@ -12545,6 +12547,10 @@ packages:
     resolution: {integrity: sha512-+4iRQan/1D8I81nR2L5vcbaaFskZC2CL17TLbvWVzQ4qiF/ytOGF6XeV54pVxAvKUtkLANhk8TyIUMtiMw2oDg==}
     dev: true
 
+  /workbox-core/7.0.0:
+    resolution: {integrity: sha512-81JkAAZtfVP8darBpfRTovHg8DGAVrKFgHpOArZbdFd78VqHr5Iw65f2guwjE2NlCFbPFDoez3D3/6ZvhI/rwQ==}
+    dev: false
+
   /workbox-expiration/5.1.4:
     resolution: {integrity: sha512-oDO/5iC65h2Eq7jctAv858W2+CeRW5e0jZBMNRXpzp0ZPvuT6GblUiHnAsC5W5lANs1QS9atVOm4ifrBiYY7AQ==}
     dependencies:
@@ -12583,6 +12589,12 @@ packages:
     dependencies:
       workbox-core: 5.1.4
     dev: true
+
+  /workbox-routing/7.0.0:
+    resolution: {integrity: sha512-8YxLr3xvqidnbVeGyRGkaV4YdlKkn5qZ1LfEePW3dq+ydE73hUUJJuLmGEykW3fMX8x8mNdL0XrWgotcuZjIvA==}
+    dependencies:
+      workbox-core: 7.0.0
+    dev: false
 
   /workbox-strategies/5.1.4:
     resolution: {integrity: sha512-VVS57LpaJTdjW3RgZvPwX0NlhNmscR7OQ9bP+N/34cYMDzXLyA6kqWffP6QKXSkca1OFo/v6v7hW7zrrguo6EA==}

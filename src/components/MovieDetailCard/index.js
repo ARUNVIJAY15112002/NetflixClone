@@ -1,6 +1,7 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
+import FooterCard from '../FooterCard'
 import Header from '../Header'
 import './index.css'
 
@@ -186,7 +187,10 @@ class MovieDetailCard extends Component {
   render() {
     return (
       <>
-        <div className="movies-card-bg">{this.renderMovieItems()}</div>
+        <div className="movies-card-bg">
+          {this.renderMovieItems()}
+          <FooterCard />
+        </div>
       </>
     )
   }

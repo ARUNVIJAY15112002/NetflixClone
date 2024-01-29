@@ -1,4 +1,5 @@
 import './index.css'
+import {Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import {Component} from 'react'
 
@@ -15,6 +16,8 @@ class Login extends Component {
 
   onSubmitSuccess = jwtToken => {
     const {username, password} = this.state
+    const {history} = this.props
+    history.replace('/')
     Cookies.set('jwt_token', jwtToken, {expires: 30})
     localStorage.setItem('username', username)
     localStorage.setItem('password', password)
@@ -80,16 +83,21 @@ class Login extends Component {
   }
 
   render() {
-    return (
-      <div className="login-container">
-        <img
-          src="https://res.cloudinary.com/dnecitokb/image/upload/v1706234912/g5twkokstl4uzxfdrcew.png"
-          className="image-logo"
-          alt="login website logo"
-        />
-        {this.renderFormContainer()}
-      </div>
-    )
+    const jwtToken = Cookies.get('jwt_token')
+    console.log(jwtToken)
+    if (jwtToken === undefined) {
+      return (
+        <div className="login-container">
+          <img
+            src="https://res.cloudinary.com/dnecitokb/image/upload/v1706234912/g5twkokstl4uzxfdrcew.png"
+            className="image-logo"
+            alt="login website logo"
+          />
+          {this.renderFormContainer()}
+        </div>
+      )
+    }
+    return <Redirect to="/" />
   }
 }
 
