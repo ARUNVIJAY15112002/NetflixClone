@@ -1,0 +1,120 @@
+.bg-searchCard {
+  min-height: 100vh;
+  width: 100vw;
+  background: #181818;
+}
+.search-images {
+  width: 255px;
+  height: 170px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  margin: 15px;
+}
+
+@media screen and (max-width: 576px) {
+  .search-images {
+    width: 90px;
+    height: 100px;
+    flex-shrink: 0;
+  }
+}
+.search-image-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  align-items: center;
+}
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 300px;
+}
+.failed-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  min-height: 100vh;
+}
+.failed-image {
+  width: 35%;
+}
+
+.failed-heading {
+  font-family: Roboto;
+  font-size: 25px;
+  color: #f1f5f9;
+  text-align: center;
+}
+.failed-note {
+  font-family: Roboto;
+  font-size: 18px;
+  color: #e2e8f0;
+  text-align: center;
+}
+
+.retry-btn {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 16px;
+  gap: 8px;
+  width: 85px;
+  height: 32px;
+  background: #ffffff;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: #171f46;
+}
+
+@media screen and (max-width: 576px) {
+  .failed-image {
+    width: 232.999px;
+    height: 172px;
+  }
+  .failed-heading {
+    font-size: 16px;
+  }
+  .retry-btn {
+    font-size: 14px;
+  }
+}
+.search-not-found-heading {
+  color: #fff;
+  font-family: 'HK Grotesk';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.search-not-found-image {
+  width: 341.584px;
+  height: 316.253px;
+  flex-shrink: 0;
+}
+.search-heading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+@media screen and (max-width: 576px) {
+  .search-not-found-image {
+    width: 287.049px;
+    height: 236.981px;
+  }
+  .search-not-found-heading {
+    font-size: 16px;
+  }
+}

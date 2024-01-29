@@ -14,7 +14,10 @@ class Login extends Component {
   }
 
   onSubmitSuccess = jwtToken => {
+    const {username, password} = this.state
     Cookies.set('jwt_token', jwtToken, {expires: 30})
+    localStorage.setItem('username', username)
+    localStorage.setItem('password', password)
   }
 
   submitForm = async e => {
