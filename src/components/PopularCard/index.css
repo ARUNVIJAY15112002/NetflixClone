@@ -29,3 +29,10 @@
     border-radius: 4px;
   }
 }
+.loader-container-popular {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

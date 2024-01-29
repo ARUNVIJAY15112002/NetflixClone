@@ -1,10 +1,12 @@
 .nav-container {
   width: 100vw;
+
   background: #131313;
-  height: 100px;
+  min-height: 100px;
+  max-height: 220px;
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column;
 }
 .image-logo-header {
   width: 135.001px;
@@ -24,11 +26,20 @@
   margin-top: 18px;
   margin-right: 20px;
 }
+.nav-main-card {
+  display: flex;
+  flex-direction: row;
+}
 
 .list-items-nav {
   display: flex;
   flex-direction: row;
   list-style: none;
+}
+@media screen and (max-width: 576px) {
+  .list-items-nav {
+    display: none;
+  }
 }
 .search-icon {
   width: 20px;
@@ -39,12 +50,14 @@
 .nav-card-1 {
   display: flex;
   flex-direction: row;
+  margin-left: 120px;
 }
 .profile-img {
-  width: 48px;
-  height: 48px;
+  width: 45px;
+  height: 45px;
   flex-shrink: 0;
-  margin-top: 24px;
+  margin-bottom: 4px;
+  display: flex;
 }
 .search-btn {
   background-color: transparent;
@@ -89,7 +102,6 @@
 
   height: 30px;
   width: 190px;
-  margin-top: 50px;
 }
 
 .search-icon {
@@ -104,4 +116,66 @@
 .nav-card-2 {
   display: flex;
   flex-direction: row;
+  margin-right: 120px;
+  width: 350px;
+  justify-content: center;
+  align-items: center;
+}
+.menu-button {
+  background-color: transparent;
+  border-width: 0px;
+  color: #fff;
+  margin-top: 2px;
+  display: none;
+}
+
+@media screen and (max-width: 576px) {
+  .nav-card-2 {
+    margin-right: 15px;
+  }
+  .nav-card-1 {
+    margin-left: 15px;
+  }
+  .profile-img {
+    display: none;
+  }
+  .menu-button {
+    display: flex;
+  }
+}
+
+.nav-mobile-views-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+.list-item-mobile-view {
+  color: #fff;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'HK Grotesk';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px; /* 162.5% */
+  letter-spacing: -0.356px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  margin-right: 30px;
+  margin-left: 2px;
+}
+.menu-mobile-container {
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.close-button {
+  background-color: transparent;
+  border-width: 0px;
+  color: #fff;
+}
+@media screen and (max-width: 576px) {
+  .menu-mobile-container {
+    display: flex;
+  }
 }

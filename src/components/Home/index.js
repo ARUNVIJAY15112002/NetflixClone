@@ -56,7 +56,7 @@ class Home extends Component {
             flexDirection: 'column',
           }}
         >
-          <Header />
+          <Header className="header-home" />
           <div className="home-header-content">
             <h1 className="home-poster-title" key={title}>
               {title}

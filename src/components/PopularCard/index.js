@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
+import Loader from 'react-loader-spinner'
 import Header from '../Header'
 import FooterCard from '../FooterCard'
 import './index.css'
@@ -48,7 +49,7 @@ class PopularCard extends Component {
   }
 
   displayMovies = x => (
-    <li>
+    <li key={x.id}>
       <img src={x.backdropPath} alt={x.title} className="popular-image-size" />
     </li>
   )
@@ -62,15 +63,39 @@ class PopularCard extends Component {
     )
   }
 
+  renderLoadingView = () => (
+    <div className="loader-container-popular">
+      <Loader type="TailSpin" height={35} width={380} color=" #D81F26" />
+    </div>
+  )
+
+  renderFailureView = () => (
+    <div className="failed-view">
+      <img
+        className="failed-image"
+        src="https://res.cloudinary.com/dug30iszj/image/upload/v1663953471/MovieApp/Popular%20page/Background-Complete_lqujhu.png"
+        alt="failure view"
+      />
+      <p className="failed-heading">Something went wrong. Please try again</p>
+      <button
+        className="retry-btn"
+        type="button"
+        onClick={this.getPopularMovies}
+      >
+        Try Again
+      </button>
+    </div>
+  )
+
   renderPopularCard = () => {
     const {apiStatus} = this.state
     switch (apiStatus) {
       case apiStatusConstants.success:
         return this.renderSuccessView()
       case apiStatusConstants.inProgress:
-        return null
+        return this.renderLoadingView()
       case apiStatusConstants.failure:
-        return null
+        return this.renderFailureView()
 
       default:
         return null
