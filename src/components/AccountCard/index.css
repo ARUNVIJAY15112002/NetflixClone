@@ -1,0 +1,161 @@
+.account-bg-container {
+  background: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.account-person-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 24px;
+}
+.membership-information {
+  display: flex;
+  flex-direction: row;
+}
+.plan-details-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.plan-information {
+  display: flex;
+  flex-direction: row;
+  margin-left: 24px;
+}
+.planDetails {
+  color: var(--Light-blue-gray-400, #94a3b8);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'HK Grotesk';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.plan-type {
+  color: var(--Light-blue-gray-800, #1e293b);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'HK Grotesk';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.plan-clarity {
+  color: var(--Light-blue-gray-800, #1e293b);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'HK Grotesk';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 27px;
+  margin-left: 10px;
+  border: 1px solid #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 22px;
+}
+.account-head {
+  color: #131313;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'HK Grotesk';
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@media screen and (max-width: 576px) {
+  .account-head {
+    font-size: 24px;
+  }
+  .planDetails {
+    font-size: 16px;
+  }
+  .plan-type {
+    font-size: 16px;
+  }
+  .plan-clarity {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+}
+
+.membership-head {
+  color: var(--Light-blue-gray-400, #94a3b8);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'HK Grotesk';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.mail-info {
+  color: var(--Light-blue-gray-800, #1e293b);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'HK Grotesk';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.password-info {
+  color: var(--Light-blue-gray-500, #64748b);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'HK Grotesk';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.account-card {
+  width: 80%;
+  align-self: center;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.hr-line-account {
+  border-radius: 10px;
+  background: var(--Light-blue-gray-300, #cbd5e1);
+  height: 2px;
+  flex-shrink: 0;
+  width: 100%;
+}
+.logout-button {
+  color: #fff;
+  text-align: center;
+  font-family: 'HK Grotesk';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  border-radius: 4px;
+  background: #e50914;
+  display: inline-flex;
+  padding: 8px 20px;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 60px;
+  border-width: 0px;
+}
+
+@media screen and (max-width: 576px) {
+  .mail-info {
+    font-size: 16px;
+  }
+  .password-info {
+    font-size: 16px;
+  }
+  .membership-head {
+    font-size: 18px;
+  }
+  .logout-button {
+    font-size: 16px;
+    margin-top: 50px;
+  }
+}

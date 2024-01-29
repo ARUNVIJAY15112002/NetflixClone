@@ -1,6 +1,7 @@
 import './App.css'
 import Home from './components/Home'
-import Header from './components/Header'
+import PopularCard from './components/PopularCard'
+import AccountCard from './components/AccountCard'
 
-const App = () => <Home />
+const App = () => <AccountCard />
 export default App
