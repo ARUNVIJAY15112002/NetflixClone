@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import {Link} from 'react-router-dom'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -86,11 +87,13 @@ class TrendingCard extends Component {
       <Slider {...settings} className="slider-container">
         {trendingList.map(eachMovie => (
           <div className="slick-item" key={eachMovie.id}>
-            <img
-              className="logo-image"
-              src={eachMovie.backdropPath}
-              alt="movie poster"
-            />
+            <Link to={`/movies/${eachMovie.id}`}>
+              <img
+                className="logo-image"
+                src={eachMovie.backdropPath}
+                alt="movie poster"
+              />
+            </Link>
           </div>
         ))}
       </Slider>

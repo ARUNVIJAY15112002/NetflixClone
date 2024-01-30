@@ -1,8 +1,10 @@
 import {Component} from 'react'
+import {Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import Header from '../Header'
 import FooterCard from '../FooterCard'
+
 import './index.css'
 
 const apiStatusConstants = {
@@ -50,7 +52,13 @@ class PopularCard extends Component {
 
   displayMovies = x => (
     <li key={x.id}>
-      <img src={x.backdropPath} alt={x.title} className="popular-image-size" />
+      <Link to={`/movies/${x.id}`} key={x.id}>
+        <img
+          src={x.backdropPath}
+          alt={x.title}
+          className="popular-image-size"
+        />
+      </Link>
     </li>
   )
 
