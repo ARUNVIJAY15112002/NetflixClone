@@ -69,6 +69,11 @@
   line-height: normal;
   margin-left: 50px;
 }
+@media screen and (max-width: 576px) {
+  .more-like-this-head {
+    margin-left: 38px;
+  }
+}
 
 .similar-movies-list-container {
   list-style: none;
@@ -152,6 +157,7 @@
   font-weight: 600;
   line-height: normal;
 }
+
 .release-date {
   color: var(--General-White, #fff);
   font-feature-settings: 'clig' off, 'liga' off;
@@ -161,6 +167,37 @@
   font-weight: 600;
   line-height: normal;
 }
+.movie-details-card {
+  margin-left: 150px;
+}
+.movie-detail-card-full {
+  height: 65vh;
+}
+@media screen and (max-width: 576px) {
+  .movie-title {
+    font-size: 36px;
+  }
+  .runtime-style {
+    font-size: 16px;
+  }
+  .UA-Style {
+    font-size: 16px;
+  }
+  .release-date {
+    font-size: 16px;
+  }
+  .movie-overview {
+    font-size: 16px;
+    width: 390px;
+  }
+  .movie-detail-card-full {
+    min-height: 44vh;
+    max-height: 55vh;
+  }
+  .movie-details-card {
+    margin-left: 10px;
+  }
+}
 .movie-details-inner-card {
   display: flex;
   flex-direction: row;
@@ -169,7 +206,4 @@
   justify-content: space-between;
   margin-top: -30px;
   margin-bottom: -20px;
-}
-.movie-details-card {
-  margin-left: 150px;
 }

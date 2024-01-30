@@ -94,7 +94,7 @@ class TrendingCard extends Component {
             >
               <img
                 className="logo-image"
-                src={eachMovie.backdropPath}
+                src={eachMovie.posterPath}
                 alt="movie poster"
               />
             </Link>

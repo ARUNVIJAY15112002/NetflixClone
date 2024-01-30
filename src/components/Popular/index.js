@@ -14,7 +14,7 @@ const apiStatusConstants = {
   inProgress: 'IN_PROGRESS',
 }
 
-class PopularCard extends Component {
+class Popular extends Component {
   state = {moviesList: [], apiStatus: apiStatusConstants.initial}
 
   componentDidMount() {
@@ -113,8 +113,8 @@ class PopularCard extends Component {
   render() {
     return (
       <>
-        <Header />
         <div className="popular-bg-container" testid="popular">
+          <Header />
           {this.renderPopularCard()}
 
           <FooterCard />
@@ -124,4 +124,4 @@ class PopularCard extends Component {
   }
 }
 
-export default PopularCard
+export default Popular

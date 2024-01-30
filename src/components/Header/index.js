@@ -46,10 +46,10 @@ class Header extends Component {
             </Link>
 
             <ul className="list-items-nav">
-              <Link to="/" target="blank">
+              <Link to="/" target="blank" className="link-style">
                 <li className="header-items">Home</li>
               </Link>
-              <Link to="/popular">
+              <Link to="/popular" className="link-style">
                 <li className="header-items">Popular</li>
               </Link>
             </ul>
@@ -91,15 +91,15 @@ class Header extends Component {
         {showMenu && (
           <div className="menu-mobile-container">
             <ul className="nav-mobile-views-list">
-              <Link to="/">
+              <Link to="/" className="link-style">
                 {' '}
                 <li className="list-item-mobile-view">Home</li>
               </Link>
-              <Link to="/popular">
+              <Link to="/popular" className="link-style">
                 {' '}
                 <li className="list-item-mobile-view">Popular</li>
               </Link>
-              <Link to="/account">
+              <Link to="/account" className="link-style">
                 {' '}
                 <li className="list-item-mobile-view">Account</li>
               </Link>

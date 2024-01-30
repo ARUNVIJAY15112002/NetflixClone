@@ -1,9 +1,10 @@
 .logo-image {
-  width: 254px;
-  height: 170px;
+  width: 294px;
+  height: 190px;
   flex-shrink: 0;
   border-radius: 8px;
 }
+
 .slider-container {
   width: 90%;
   margin-left: 0px;
@@ -24,6 +25,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+@media screen and (max-width: 576px) {
+  .logo-image {
+    width: 100px;
+    height: 74px;
+    flex-shrink: 0;
+  }
+  .slider-container {
+    width: 90%;
+    margin-left: -80px;
+  }
 }
 .warning {
   width: 32px;

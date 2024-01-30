@@ -75,7 +75,7 @@
     color: var(--General-White, #fff);
     font-feature-settings: 'clig' off, 'liga' off;
     font-family: 'HK Grotesk';
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -84,7 +84,7 @@
   .home-poster-overview {
     color: #fff;
     font-family: 'HK Grotesk';
-    font-size: 10px;
+    font-size: 11px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -136,5 +136,25 @@
   .loading-failure-container-home {
     width: 296px;
     height: 213px;
+  }
+}
+
+.top-bg-card {
+  height: 60vh;
+}
+
+@media screen and (max-width: 576px) {
+  .top-bg-card {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .home-poster-overview {
+    width: 200px;
+  }
+  .home-header-content {
+    margin-left: 10px;
+    margin-top: 50px;
   }
 }

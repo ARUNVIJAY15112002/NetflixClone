@@ -107,15 +107,11 @@ class MovieDetailCard extends Component {
     return (
       <div
         style={{
-          background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(24, 24, 24, 0.546875) 38.26%, #181818 92.82%, #181818 98.68%, #181818 108.61%),url(${backdropPath})`,
           backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center center',
-          minHeight: '605px',
-          display: 'flex',
-          flexDirection: 'column',
+          backgroundImage: `url(${backdropPath})`,
+          width: '100vw',
         }}
-        className="movie-detail-card"
+        className="movie-detail-card-full"
       >
         <Header />
         <div className="movie-details-card">

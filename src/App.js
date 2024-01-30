@@ -2,7 +2,7 @@ import {Link, BrowserRouter, Route, Switch, Redirect} from 'react-router-dom'
 
 import ProtectedRoute from './components/ProtectedRoute'
 import Home from './components/Home'
-import PopularCard from './components/PopularCard'
+import Popular from './components/Popular'
 import AccountCard from './components/AccountCard'
 import SearchCard from './components/SearchCard'
 import Login from './components/Login'
@@ -15,7 +15,7 @@ const App = () => (
     <Switch>
       <Route exact path="/login" component={Login} />
       <ProtectedRoute exact path="/" component={Home} />
-      <ProtectedRoute exact path="/popular" component={PopularCard} />
+      <ProtectedRoute exact path="/popular" component={Popular} />
       <ProtectedRoute exact path="/search" component={SearchCard} />
       <ProtectedRoute exact path="/Account" component={AccountCard} />
       <ProtectedRoute exact path="/movies/:id" component={MovieDetailCard} />
