@@ -87,7 +87,11 @@ class TrendingCard extends Component {
       <Slider {...settings} className="slider-container">
         {trendingList.map(eachMovie => (
           <div className="slick-item" key={eachMovie.id}>
-            <Link to={`/movies/${eachMovie.id}`}>
+            <Link
+              to={`/movies/${eachMovie.id}`}
+              target="blank"
+              key={eachMovie.id}
+            >
               <img
                 className="logo-image"
                 src={eachMovie.backdropPath}

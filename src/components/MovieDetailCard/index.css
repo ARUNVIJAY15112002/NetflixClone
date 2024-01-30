@@ -82,6 +82,13 @@
   border-radius: 8px;
   margin: 10px;
 }
+@media screen and (max-width: 576px) {
+  .similar-movies-img {
+    width: 90px;
+    height: 64px;
+  }
+}
+
 .movie-detail-card {
   height: 40vh;
 }

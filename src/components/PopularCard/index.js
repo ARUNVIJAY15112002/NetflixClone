@@ -52,7 +52,7 @@ class PopularCard extends Component {
 
   displayMovies = x => (
     <li key={x.id}>
-      <Link to={`/movies/${x.id}`} key={x.id}>
+      <Link to={`/movies/${x.id}`} key={x.id} target="blank">
         <img
           src={x.backdropPath}
           alt={x.title}
@@ -72,7 +72,7 @@ class PopularCard extends Component {
   }
 
   renderLoadingView = () => (
-    <div className="loader-container-popular">
+    <div className="loader-container-popular" testid="loader">
       <Loader type="TailSpin" height={35} width={380} color=" #D81F26" />
     </div>
   )
@@ -114,7 +114,7 @@ class PopularCard extends Component {
     return (
       <>
         <Header />
-        <div className="popular-bg-container">
+        <div className="popular-bg-container" testid="popular">
           {this.renderPopularCard()}
 
           <FooterCard />

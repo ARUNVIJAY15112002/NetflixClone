@@ -1,4 +1,6 @@
 import {Component} from 'react'
+import {Link} from 'react-router-dom'
+
 import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
 import Header from '../Header'
@@ -85,13 +87,15 @@ class SearchCard extends Component {
           <>
             <ul className="search-image-container">
               {movieSearchList.map(x => (
-                <li key={x.id}>
-                  <img
-                    src={x.backdropPath}
-                    alt={x.title}
-                    className="search-images"
-                  />
-                </li>
+                <Link to={`/movies/${x.id}`} key={x.id} target="blank">
+                  <li key={x.id}>
+                    <img
+                      src={x.backdropPath}
+                      alt={x.title}
+                      className="search-images"
+                    />
+                  </li>
+                </Link>
               ))}
             </ul>
           </>
@@ -103,7 +107,7 @@ class SearchCard extends Component {
   }
 
   renderLoadingView = () => (
-    <div className="loader-container">
+    <div className="loader-container" testid="loader">
       <Loader type="TailSpin" height={35} width={380} color=" #D81F26" />
     </div>
   )
@@ -142,7 +146,7 @@ class SearchCard extends Component {
 
   render() {
     return (
-      <div className="bg-searchCard">
+      <div className="bg-searchCard" testid="search">
         <Header getSearchInput={this.getSearchInput} />
         {this.renderSearchCard()}
       </div>

@@ -37,13 +37,16 @@ class Header extends Component {
       <nav className="nav-container">
         <div className="nav-main-card">
           <div className="nav-card-1">
-            <img
-              src="https://res.cloudinary.com/dnecitokb/image/upload/v1706234912/g5twkokstl4uzxfdrcew.png"
-              className="image-logo-header"
-              alt="login website logo"
-            />
+            <Link to="/">
+              <img
+                src="https://res.cloudinary.com/dnecitokb/image/upload/v1706234912/g5twkokstl4uzxfdrcew.png"
+                className="image-logo-header"
+                alt="login website logo"
+              />
+            </Link>
+
             <ul className="list-items-nav">
-              <Link to="/">
+              <Link to="/" target="blank">
                 <li className="header-items">Home</li>
               </Link>
               <Link to="/popular">

@@ -24,7 +24,7 @@ const AccountCard = props => {
           <h1 className="account-head">Account</h1>
           <hr className="hr-line-account" />
           <div className="membership-information">
-            <p className="membership-head">Membership</p>
+            <p className="membership-head">Member ship</p>
             <div className="account-person-details">
               <p className="mail-info">{username}@gmail.com</p>
               <p className="password-info">Password:{finalPassword}</p>

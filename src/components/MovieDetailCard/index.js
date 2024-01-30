@@ -210,12 +210,14 @@ class MovieDetailCard extends Component {
           <h1 className="more-like-this-head">More like this </h1>
           <ul className="similar-movies-list-container">
             {similarMovies.map(each => (
-              <Link to={`/movies/${each.id}`}>
-                <img
-                  src={each.posterPath}
-                  alt={each.title}
-                  className="similar-movies-img"
-                />
+              <Link to={`/movies/${each.id}`} target="blank" key={each.id}>
+                <li key={each.id}>
+                  <img
+                    src={each.posterPath}
+                    alt={each.title}
+                    className="similar-movies-img"
+                  />
+                </li>
               </Link>
             ))}
           </ul>
@@ -227,7 +229,7 @@ class MovieDetailCard extends Component {
   renderLoadingView = () => (
     <>
       <Header />
-      <div className="loader-container-popular">
+      <div className="loader-container-popular" testid="loader">
         <Loader type="TailSpin" height={35} width={380} color=" #D81F26" />
       </div>
     </>
@@ -270,7 +272,7 @@ class MovieDetailCard extends Component {
   render() {
     return (
       <>
-        <div className="movies-card-bg">
+        <div className="movies-card-bg" testid="movieItem">
           {this.renderMovieItems()}
           <FooterCard />
         </div>

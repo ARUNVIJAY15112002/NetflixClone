@@ -117,3 +117,24 @@
 .header-home {
   opacity: 1;
 }
+
+.loading-failure-container-home {
+  width: 1109px;
+  height: 466px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #0d0d0d;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 576px) {
+  .loading-failure-container-home {
+    width: 296px;
+    height: 213px;
+  }
+}
