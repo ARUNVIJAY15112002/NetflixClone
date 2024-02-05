@@ -11,17 +11,15 @@ import NotFound from './components/NotFound'
 import './App.css'
 
 const App = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route exact path="/login" component={Login} />
-      <ProtectedRoute exact path="/" component={Home} />
-      <ProtectedRoute exact path="/popular" component={Popular} />
-      <ProtectedRoute exact path="/search" component={SearchCard} />
-      <ProtectedRoute exact path="/Account" component={AccountCard} />
-      <ProtectedRoute exact path="/movies/:id" component={MovieDetailCard} />
-      <ProtectedRoute exact path="/not-found" component={NotFound} />
-      <Redirect to="/not-found" />
-    </Switch>
-  </BrowserRouter>
+  <Switch>
+    <Route exact path="/login" component={Login} />
+    <ProtectedRoute exact path="/" component={Home} />
+    <ProtectedRoute exact path="/popular" component={Popular} />
+    <ProtectedRoute exact path="/search" component={SearchCard} />
+    <ProtectedRoute exact path="/Account" component={AccountCard} />
+    <ProtectedRoute exact path="/movies/:id" component={MovieDetailCard} />
+    <ProtectedRoute exact path="/not-found" component={NotFound} />
+    <Redirect to="/not-found" />
+  </Switch>
 )
 export default App
