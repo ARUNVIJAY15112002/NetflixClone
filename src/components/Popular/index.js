@@ -53,11 +53,7 @@ class Popular extends Component {
   displayMovies = x => (
     <li key={x.id}>
       <Link to={`/movies/${x.id}`} key={x.id} target="blank">
-        <img
-          src={x.backdropPath}
-          alt={x.title}
-          className="popular-image-size"
-        />
+        <img src={x.posterPath} alt={x.title} className="popular-image-size" />
       </Link>
     </li>
   )

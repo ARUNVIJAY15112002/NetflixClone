@@ -1,18 +1,11 @@
-import './index.css'
 import {Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import {Component} from 'react'
+import AccountContext from '../../context/AccountContext'
+import './index.css'
 
 class Login extends Component {
   state = {username: '', password: '', showSubmitError: false, errorMsg: ''}
-
-  getUserName = e => {
-    this.setState({username: e.target.value})
-  }
-
-  getPassword = e => {
-    this.setState({password: e.target.value})
-  }
 
   onSubmitSuccess = jwtToken => {
     const {username, password} = this.state
@@ -47,44 +40,60 @@ class Login extends Component {
   renderFormContainer = () => {
     const {errorMsg, showSubmitError} = this.state
     return (
-      <form className="form-container" onSubmit={this.submitForm}>
-        <h1 className="login-text">Login</h1>
-        <div className="input-container">
-          <label htmlFor="user-input" className="login-label-style">
-            USERNAME
-          </label>
-          <input
-            type="text"
-            id="user-input"
-            className="login-input-style"
-            onChange={this.getUserName}
-          />
-        </div>
-        <div className="input-container">
-          <label htmlFor="user-password" className="login-label-style">
-            PASSWORD
-          </label>
-          <input
-            type="password"
-            id="user-password"
-            className="login-input-style"
-            onChange={this.getPassword}
-          />
-        </div>
-        {showSubmitError && <p className="error-data">{errorMsg}</p>}
-        <button className="Login-button" type="submit">
-          Login
-        </button>
-        <button type="submit" className="sign-in-button">
-          Sign in
-        </button>
-      </form>
+      <AccountContext.Consumer>
+        {value => {
+          const {getName, getPassword} = value
+
+          const getUserName = e => {
+            this.setState({username: e.target.value})
+            getName(e.target.value)
+          }
+
+          const getUserPassword = e => {
+            this.setState({password: e.target.value})
+            getPassword(e.target.value)
+          }
+          return (
+            <form className="form-container" onSubmit={this.submitForm}>
+              <h1 className="login-text">Login</h1>
+              <div className="input-container">
+                <label htmlFor="user-input" className="login-label-style">
+                  USERNAME
+                </label>
+                <input
+                  type="text"
+                  id="user-input"
+                  className="login-input-style"
+                  onChange={getUserName}
+                />
+              </div>
+              <div className="input-container">
+                <label htmlFor="user-password" className="login-label-style">
+                  PASSWORD
+                </label>
+                <input
+                  type="password"
+                  id="user-password"
+                  className="login-input-style"
+                  onChange={getUserPassword}
+                />
+              </div>
+              {showSubmitError && <p className="error-data">{errorMsg}</p>}
+              <button className="Login-button" type="submit">
+                Login
+              </button>
+              <button type="submit" className="sign-in-button">
+                Sign in
+              </button>
+            </form>
+          )
+        }}
+      </AccountContext.Consumer>
     )
   }
 
   render() {
     const jwtToken = Cookies.get('jwt_token')
-    console.log(jwtToken)
     if (jwtToken === undefined) {
       return (
         <div className="login-container" testid="login">

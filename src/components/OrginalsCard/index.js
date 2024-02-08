@@ -53,7 +53,7 @@ class TrendingCard extends Component {
   renderSuccessView = () => {
     const settings = {
       dots: false,
-      infinite: true,
+      infinite: false,
       speed: 500,
       slidesToShow: 4,
       slidesToScroll: 1,
@@ -95,7 +95,7 @@ class TrendingCard extends Component {
               <img
                 className="logo-image"
                 src={eachMovie.posterPath}
-                alt="movie poster"
+                alt={eachMovie.name}
               />
             </Link>
           </div>

@@ -174,7 +174,7 @@ class MovieDetailCard extends Component {
             <ul className="list-container">
               {genres.map(each => (
                 <li className="Genres-items" key={each.id}>
-                  {each.name}
+                  <p>{each.name}</p>
                 </li>
               ))}
             </ul>
@@ -199,7 +199,7 @@ class MovieDetailCard extends Component {
             <h1 className="Genres-head">Budget</h1>
             <p className="details-item">{updatedMovieDetails.budget}</p>
             <h1 className="Genres-head">Release Date</h1>
-            <p className="details-item">{finalDate}</p>
+            <p className="details-item">{updatedMovieDetails.releaseDate}</p>
           </div>
         </div>
         <div>
