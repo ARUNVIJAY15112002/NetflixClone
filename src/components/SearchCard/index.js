@@ -21,8 +21,7 @@ class SearchCard extends Component {
     searchInput: '',
   }
 
-  getSearchMovies = async e => {
-    const {searchInput} = this.state
+  getSearchMovies = async searchInput => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
     const jwtToken = Cookies.get('jwt_token')
     const apiUrl = `https://apis.ccbp.in/movies-app/movies-search?search=${searchInput}`

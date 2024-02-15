@@ -7,7 +7,7 @@ import {IoMdCloseCircle} from 'react-icons/io'
 import './index.css'
 
 class Header extends Component {
-  state = {showSearchBox: false, showMenu: false}
+  state = {showSearchBox: false, showMenu: false, searchValue: ''}
 
   componentDidMount() {
     const {match} = this.props
@@ -20,15 +20,8 @@ class Header extends Component {
     }
   }
 
-  onClickSearchIcon = () => {
-    const {getSearchMovies} = this.props
-  }
-
   onChangeSearchInput = e => {
-    const {getSearchInput} = this.props
-    if (e.key === 'Enter') {
-      getSearchInput(e.target.value)
-    }
+    this.setState({searchValue: e.target.value})
   }
 
   displayMenu = () => {
@@ -39,15 +32,16 @@ class Header extends Component {
     this.setState({showMenu: false})
   }
 
-  getSearchResult1 = e => {
-    const {getSearchResult} = this.props
-    e.preventDefault()
-    getSearchResult()
+  onSearch = () => {
+    const {searchValue} = this.state
+    if (searchValue !== '') {
+      const {getSearchMovies} = this.props
+      getSearchMovies(searchValue)
+    }
   }
 
   render() {
     const {showSearchBox, showMenu} = this.state
-    const {getSearchMovies} = this.props
 
     const iconStyle = showSearchBox ? 'icon-button-change' : 'icon-button'
 
@@ -77,21 +71,25 @@ class Header extends Component {
               {showSearchBox && (
                 <input
                   type="search"
-                  onKeyDown={this.onChangeSearchInput}
+                  onChange={this.onChangeSearchInput}
                   placeholder="search"
                   className="search"
                 />
               )}
-
-              <button className={iconStyle} testid="searchButton" type="button">
-                <Link to="/search">
+              <Link to="/search">
+                <button
+                  className={iconStyle}
+                  testid="searchButton"
+                  type="button"
+                  onClick={this.onSearch}
+                >
                   <HiOutlineSearch
                     size={18}
                     color="white"
                     testid="searchButton"
                   />
-                </Link>
-              </button>
+                </button>
+              </Link>
             </div>
             <Link to="/account">
               <img
