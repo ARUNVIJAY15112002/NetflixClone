@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import {HiOutlineSearch} from 'react-icons/hi'
 import {MdMenuOpen} from 'react-icons/md'
 import {IoMdCloseCircle} from 'react-icons/io'
@@ -9,8 +9,19 @@ import './index.css'
 class Header extends Component {
   state = {showSearchBox: false, showMenu: false}
 
+  componentDidMount() {
+    const {match} = this.props
+    const {path} = match
+
+    if (path === '/search') {
+      this.setState({showSearchBox: true})
+    } else {
+      this.setState({showSearchBox: false})
+    }
+  }
+
   onClickSearchIcon = () => {
-    this.setState(prevState => ({showSearchBox: !prevState.showSearchBox}))
+    const {getSearchMovies} = this.props
   }
 
   onChangeSearchInput = e => {
@@ -28,8 +39,15 @@ class Header extends Component {
     this.setState({showMenu: false})
   }
 
+  getSearchResult1 = e => {
+    const {getSearchResult} = this.props
+    e.preventDefault()
+    getSearchResult()
+  }
+
   render() {
     const {showSearchBox, showMenu} = this.state
+    const {getSearchMovies} = this.props
 
     const iconStyle = showSearchBox ? 'icon-button-change' : 'icon-button'
 
@@ -65,13 +83,12 @@ class Header extends Component {
                 />
               )}
 
-              <button type="button" className={iconStyle} testid="searchButton">
+              <button className={iconStyle} testid="searchButton" type="button">
                 <Link to="/search">
                   <HiOutlineSearch
                     size={18}
                     color="white"
                     testid="searchButton"
-                    onClick={this.onClickSearchIcon}
                   />
                 </Link>
               </button>
@@ -114,4 +131,4 @@ class Header extends Component {
   }
 }
 
-export default Header
+export default withRouter(Header)

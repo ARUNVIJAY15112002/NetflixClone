@@ -21,11 +21,7 @@ class SearchCard extends Component {
     searchInput: '',
   }
 
-  componentDidMount() {
-    this.getSearchMovies()
-  }
-
-  getSearchMovies = async () => {
+  getSearchMovies = async e => {
     const {searchInput} = this.state
     this.setState({apiStatus: apiStatusConstants.inProgress})
     const jwtToken = Cookies.get('jwt_token')
@@ -147,7 +143,10 @@ class SearchCard extends Component {
   render() {
     return (
       <div className="bg-searchCard" testid="search">
-        <Header getSearchInput={this.getSearchInput} />
+        <Header
+          getSearchInput={this.getSearchInput}
+          getSearchMovies={this.getSearchMovies}
+        />
         {this.renderSearchCard()}
       </div>
     )
