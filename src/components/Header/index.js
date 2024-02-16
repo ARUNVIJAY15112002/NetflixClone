@@ -83,11 +83,7 @@ class Header extends Component {
                   type="button"
                   onClick={this.onSearch}
                 >
-                  <HiOutlineSearch
-                    size={18}
-                    color="white"
-                    testid="searchButton"
-                  />
+                  <HiOutlineSearch size={18} color="white" />
                 </button>
               </Link>
             </div>

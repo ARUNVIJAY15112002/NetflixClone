@@ -21,10 +21,13 @@ class SearchCard extends Component {
     searchInput: '',
   }
 
-  getSearchMovies = async searchInput => {
-    this.setState({apiStatus: apiStatusConstants.inProgress})
+  getSearchMovies = async searchIp => {
+    this.setState({
+      apiStatus: apiStatusConstants.inProgress,
+      searchInput: searchIp,
+    })
     const jwtToken = Cookies.get('jwt_token')
-    const apiUrl = `https://apis.ccbp.in/movies-app/movies-search?search=${searchInput}`
+    const apiUrl = `https://apis.ccbp.in/movies-app/movies-search?search=${searchIp}`
     const options = {
       method: 'GET',
       headers: {
@@ -50,10 +53,6 @@ class SearchCard extends Component {
         apiStatus: apiStatusConstants.failure,
       })
     }
-  }
-
-  getSearchInput = value => {
-    this.setState({searchInput: value}, this.getSearchMovies)
   }
 
   renderNotFound = () => {
@@ -85,7 +84,7 @@ class SearchCard extends Component {
                 <Link to={`/movies/${x.id}`} key={x.id} target="blank">
                   <li key={x.id}>
                     <img
-                      src={x.backdropPath}
+                      src={x.posterPath}
                       alt={x.title}
                       className="search-images"
                     />
@@ -142,10 +141,7 @@ class SearchCard extends Component {
   render() {
     return (
       <div className="bg-searchCard" testid="search">
-        <Header
-          getSearchInput={this.getSearchInput}
-          getSearchMovies={this.getSearchMovies}
-        />
+        <Header getSearchMovies={this.getSearchMovies} />
         {this.renderSearchCard()}
       </div>
     )
