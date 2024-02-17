@@ -53,12 +53,12 @@ class Header extends Component {
               <img
                 src="https://res.cloudinary.com/dnecitokb/image/upload/v1706234912/g5twkokstl4uzxfdrcew.png"
                 className="image-logo-header"
-                alt="login website logo"
+                alt="website logo"
               />
             </Link>
 
             <ul className="list-items-nav">
-              <Link to="/" target="blank" className="link-style">
+              <Link to="/" className="link-style">
                 <li className="header-items">Home</li>
               </Link>
               <Link to="/popular" className="link-style">

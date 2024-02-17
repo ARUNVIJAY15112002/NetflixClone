@@ -68,12 +68,8 @@ class Home extends Component {
         >
           <Header />
           <div className="home-header-content">
-            <h1 className="home-poster-title" key={title}>
-              {title}
-            </h1>
-            <h1 className="home-poster-overview" key={overview}>
-              {overview}
-            </h1>
+            <h1 className="home-poster-title">{title}</h1>
+            <h1 className="home-poster-overview">{overview}</h1>
             <button className="home-poster-play-btn" type="button">
               Play
             </button>

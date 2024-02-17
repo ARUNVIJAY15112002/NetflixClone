@@ -65,9 +65,9 @@ class SearchCard extends Component {
           alt="no movies"
           className="search-not-found-image"
         />
-        <h1 className="search-not-found-heading">
+        <p className="search-not-found-heading">
           Your search for {searchInput} did not find any matches.
-        </h1>
+        </p>
       </div>
     )
   }
@@ -81,7 +81,7 @@ class SearchCard extends Component {
           <>
             <ul className="search-image-container">
               {movieSearchList.map(x => (
-                <Link to={`/movies/${x.id}`} key={x.id} target="blank">
+                <Link to={`/movies/${x.id}`} key={x.id}>
                   <li key={x.id}>
                     <img
                       src={x.posterPath}

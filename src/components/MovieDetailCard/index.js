@@ -206,7 +206,7 @@ class MovieDetailCard extends Component {
           <h1 className="more-like-this-head">More like this </h1>
           <ul className="similar-movies-list-container">
             {similarMovies.map(each => (
-              <Link to={`/movies/${each.id}`} target="blank" key={each.id}>
+              <Link to={`/movies/${each.id}`} key={each.id}>
                 <li key={each.id}>
                   <img
                     src={each.posterPath}
