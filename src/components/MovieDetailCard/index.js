@@ -1,6 +1,7 @@
 import {Component} from 'react'
 import {Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
+import {format} from 'date-fns'
 import Loader from 'react-loader-spinner'
 import FooterCard from '../FooterCard'
 import Header from '../Header'
@@ -149,6 +150,9 @@ class MovieDetailCard extends Component {
 
     const updatedMovieDetails = movieDetails[0]
     const {releaseDate} = updatedMovieDetails
+    const releaseYear = format(new Date(releaseDate), 'yyyy')
+    const movieReleaseDate = format(new Date(releaseDate), 'do MMMM Y')
+
     const date = new Date(releaseDate)
     const year = date.getFullYear()
     const month = months[date.getMonth()]
@@ -184,7 +188,7 @@ class MovieDetailCard extends Component {
             <ul className="list-container">
               {spokenLanguages.map(each => (
                 <li className="Genres-items" key={each.id}>
-                  {each.language}
+                  <p>{each.language}</p>
                 </li>
               ))}
             </ul>
@@ -199,14 +203,14 @@ class MovieDetailCard extends Component {
             <h1 className="Genres-head">Budget</h1>
             <p className="details-item">{updatedMovieDetails.budget}</p>
             <h1 className="Genres-head">Release Date</h1>
-            <p className="details-item">{updatedMovieDetails.releaseDate}</p>
+            <p className="details-item">{movieReleaseDate}</p>
           </div>
         </div>
         <div>
           <h1 className="more-like-this-head">More like this </h1>
           <ul className="similar-movies-list-container">
             {similarMovies.map(each => (
-              <Link to={`/movies/${each.id}`} key={each.id}>
+              <Link to={`/movies/${each.id}`} key={each.id} target="blank">
                 <li key={each.id}>
                   <img
                     src={each.posterPath}

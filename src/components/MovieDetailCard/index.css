@@ -171,7 +171,8 @@
   margin-left: 150px;
 }
 .movie-detail-card-full {
-  height: 65vh;
+  min-height: 65vh;
+  max-height: 75vh;
 }
 @media screen and (max-width: 576px) {
   .movie-title {
@@ -192,10 +193,11 @@
   }
   .movie-detail-card-full {
     min-height: 44vh;
-    max-height: 55vh;
+    max-height: 75vh;
   }
   .movie-details-card {
     margin-left: 10px;
+    padding: 10px;
   }
 }
 .movie-details-inner-card {

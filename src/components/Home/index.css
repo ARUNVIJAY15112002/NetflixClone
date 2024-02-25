@@ -106,6 +106,9 @@
     font-variant: all-small-caps;
     letter-spacing: 0.7px;
   }
+  .trending-heading {
+    margin-left: -80px;
+  }
 }
 .home-items {
   display: flex;
@@ -140,12 +143,13 @@
 }
 
 .top-bg-card {
-  height: 60vh;
+  height: 65vh;
 }
 
 @media screen and (max-width: 576px) {
   .top-bg-card {
     height: 40vh;
+    min-height: 55vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;

@@ -1,7 +1,7 @@
 .popular-bg-container {
   background: #181818;
   min-height: 100vh;
-  max-height: 200vh;
+  max-height: 300vh;
   width: 100vw;
   display: flex;
   flex-direction: column;

@@ -63,6 +63,7 @@ class Login extends Component {
                   id="user-input"
                   className="login-input-style"
                   onChange={getUserName}
+                  placeholder="rahul"
                 />
               </div>
               <div className="input-container">
@@ -74,6 +75,7 @@ class Login extends Component {
                   id="user-password"
                   className="login-input-style"
                   onChange={getUserPassword}
+                  placeholder="rahul@2021"
                 />
               </div>
               {showSubmitError && <p className="error-data">{errorMsg}</p>}

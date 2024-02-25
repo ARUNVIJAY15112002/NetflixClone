@@ -23,7 +23,7 @@ class Home extends Component {
   }
 
   getUpperCard = async () => {
-    const apiUrl = 'https://apis.ccbp.in/movies-app/trending-movies'
+    const apiUrl = 'https://apis.ccbp.in/movies-app/originals'
     this.setState({apiStatus: apiStatusConstants.inProgress})
     const jwtToken = Cookies.get('jwt_token')
     const options = {
